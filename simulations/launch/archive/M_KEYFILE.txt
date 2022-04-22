@@ -1,0 +1,415 @@
+//This file contains a listing of the key options that can be used in the master file
+//To disable this function and use the simulator remove GiveKeys 1 from the Master file
+//
+//=InterventionName= gives the name of the section to which the keys belong
+//KeyName* indicates optional
+//Indentation indicates that a key is only used if its parent key is enabled
+//Version:  Landscape Simulator v3.592 
+
+
+
+========
+ MASTER 
+========
+
+
+
+=Random Number Generator Configuration= ~APPLICATION~
+ RNGSeed* 0 ~l[0, 18446744073709551615]~
+
+
+=Simulation Configuration= ~SIMULATION~
+ SimulationStartTime* 0.000000 ~f~
+ SimulationLength 1.000000 ~f>0~
+
+
+=Model Configuration= ~MODEL~
+ TrackInoculumDeposition* 0 ~i[0,1]~
+ TrackInoculumExport* 0 ~i[0,1]~
+ Model SIR ~s#ModelString#~
+ MaxHosts 1 ~i>0~
+ Population_~i[0,#nPopulations#)~_Kernel* 0 ~i[0,#nKernels#)~
+
+=SummaryDataManager= ~SIMULATION~
+ NWeightings* 0 ~i>=0~
+ ZoneRasterFileName*  ~s#FileName#~
+ ZoneRasterFileListFileName*  ~s#FileName#~
+
+
+
+===========
+ DISPERSAL 
+===========
+
+
+
+=Kernel Type= ~MODEL~
+ Kernel_0_Type Exponential ~s{Exponential, PowerLaw, AdjacentPowerLaw, Raster}~
+
+
+=Raster Kernel= ~MODEL~
+  Kernel_0_RasterWithinCellProportion* 0.000000 ~f[0,1]~
+
+
+=Prebuilt functional forms: Exponential, Power law, Adjacent Power Law= ~MODEL~
+  Kernel_0_WithinCellProportion 0.000000 ~f[0,1]~
+  Kernel_0_Parameter 1.000000 ~f>=0~
+  Kernel_0_Range 1 ~i>0~
+  Kernel_0_Scaling* 1.000000 ~f>0~
+
+
+=Kernel Options= ~APPLICATION~
+  Kernel_0_VirtualSporulationTransition* 0.250000 ~f[0,1]~
+  Kernel_0_VirtualSporulationTransitionByRange* 5 ~i>=0~
+  Kernel_0_ForceAllVirtualSporulation* 0 ~i[0,1]~
+  Kernel_0_Copy* 0 ~i[0,1]~
+
+
+
+===============
+ EVENT MANAGER 
+===============
+
+
+
+=Rate Structures= ~APPLICATION~
+ RatesForceRateStructureInfection* Automatic ~s{Automatic,Sum,Intervals,Tree,CR}~
+ RatesForceRateStructureStandard* Automatic ~s{Automatic,Sum,Intervals,Tree,CR}~
+ RatesSporesAreMagnetic* 0 ~i[0,1]~
+
+
+=Rate Constants= ~MODEL~
+ Rate_BackgroundInfection* 0.000000 ~f>=0~
+
+//Example Rate Constants for a SEIS-SIR Model:
+
+// Rate_0_Sporulation
+// Rate_0_EtoI
+// Rate_0_ItoS
+
+// Rate_1_Sporulation
+// Rate_1_ItoR
+ ~#RateConstants#~ 1.0 ~f>0~
+
+
+
+===============
+ INTERVENTIONS 
+===============
+
+
+
+=EndSimulation= ~SIMULATION~
+ EndSimulationConditionsFileName* EndSimulationConditions.txt ~s#FileName#~
+ EndSimulationAbortAfterWallclockTimeInSeconds* -1 ~i>0~
+
+
+=OutputDataDPC= ~SIMULATION~
+ DPCFrequency 0.010000 ~f>0~
+ DPCTimeFirst 0.000000 ~f~
+ DPCQuiet* 0 ~i[0,1]~
+ DPCSampleKernelStatistics* 0 ~i[0,1]~
+ DPCBufferOutput* 0 ~i[0,1]~
+
+
+=OutputDataRaster= ~SIMULATION~
+ RasterEnable* 1 ~i[0,1]~
+  RasterFrequency 1.000000 ~f>0~
+  RasterFirst 2.000000 ~f>0~
+//When raster output is enabled, all rasters are output by default.
+//To output only a subset, disable all rasters and then enable the specific ones desired.
+//Enable individual rasters as: RasterEnable_POPULATIONINDEX_CLASSNAME
+//Example:
+// RasterEnable_0_SUSCEPTIBLE
+  RasterDisable_ALL 0 ~i[0,1]~
+  RasterEnable_~s{#PopulationIndexAndFullPopulationClassNames#}~* 0 ~i[0,1]~
+  RasterEnable_~i[0,#nPopulations#)~_~s{#EpidemiologicalMetrics#}~* 0 ~i[0,1]~
+
+
+=SpatialStatistics= ~SIMULATION~
+ SpatialStatisticsEnable* 0 ~i[0,1]~
+//Specify EITHER *only* TimesAndFiles OR *all* of Frequency TimeFirst TargetDataFileName
+  SpatialStatisticsTimesAndFiles* {"1.0" : "myTargetDataRasterName.txt"} ~s#JSON{f:#FileName#}#~
+  SpatialStatisticsFrequency* 1.000000 ~f>0~
+   SpatialStatisticsTimeFirst* 2.000000 ~f>=0~
+  SpatialStatisticsTargetDataFileName* L_SpatialStatisticsTargetData.txt ~s#FileName#~
+  SpatialStatisticsPositiveCriterionSymptomatic* 1 ~i[0,1]~
+  SpatialStatisticsPositiveCriterionSeverity* 0 ~i[0,1]~
+  SpatialStatisticsDetectionProbability* 1.000000 ~f[0,1]~
+  SpatialStatisticCountsEnable* 0 ~i[0,1]~
+  SpatialStatisticRingEnable* 0 ~i[0,1]~
+   SpatialStatisticRingCentreX 0 ~i[0,#nCols#)~
+   SpatialStatisticRingCentreY 0 ~i[0,#nRows#)~
+   SpatialStatisticRingRadiusStep 1.000000 ~f>0~
+   SpatialStatisticRingRadiusMax 1.000000 ~f>0~
+   SpatialStatisticRingFullStats* 0 ~i[0,1]~
+   SpatialStatisticRingPercentileIncrement* 5.000000 ~f>0~
+  SpatialStatisticMoranIEnable* 0 ~i[0,1]~
+   SpatialStatisticMoranIRadiusStep 1.000000 ~f>0~
+   SpatialStatisticMoranIRadiusMax 1.000000 ~f>0~
+   SpatialStatisticMoranIFullStats* 0 ~i[0,1]~
+  SpatialStatisticClusterEnable* 0 ~i[0,1]~
+  SpatialStatisticClusterOutputImages* 0 ~i[0,1]~
+
+
+=Video= ~SIMULATION~
+ VideoEnable* 0 ~i[0,1]~
+  VideoForceEnable* 0 ~i[0,1]~
+  VideoFrequency 1.000000 ~f>0~
+  VideotimeFirst 1.000000 ~f>0~
+  VideoDesiredLengthInSeconds* 10.000000 ~f>0~
+  VideoSimulationTimePerSecond* 0.100000 ~f>0~
+  VideoX* 0.000000 ~f[0,#nCols#)~
+  VideoY* 0.000000 ~f[0,#nRows#)~
+  VideoResolutionX* 600 ~i[100, 4096]~
+  VideoResolutionY* 600 ~i[100, 4096]~
+  VideoZoom* 100.000000 ~f>=1~
+  VideoExportImages* 0 ~i[0,1]~
+   VideoExportNoHostAsAlpha* 0 ~i[0,1]~
+  VideoExportLastFrame* 0 ~i[0,1]~
+  VideoShowHostLandscape* 1 ~i[0,1]~
+  VideoShowOnlySymptomatic* 0 ~i[0,1]~
+  VideoDisplayTime* 1 ~i[0,1]~
+  VideoDisplayWindSock* 0 ~i[0,1]~
+  VideoMask* L_VideoMask.txt ~s#FileName#~
+  VideoHostColourRampFileName* DEFAULT ~s#FileName#~
+  VideoHealthyColourRampFileName* DEFAULT ~s#FileName#~
+  VideoInfectiousColourRampFileName* DEFAULT ~s#FileName#~
+
+
+=DetectionSweep= ~POLICY~
+ DetectionEnable* 0 ~i[0,1]~
+  DetectionFrequency 1.000000 ~f>0~
+  DetectionFirst 2.000000 ~f>=0~
+  DetectionParameter 1.000000 ~f[0,1]~
+  DetectionUseDetectionParameterRaster* 0 ~i[0,1]~
+   DetectionParameterRasterFileName* DetectionParameterRaster.txt ~s#FileName#~
+  DetectionMinumumDetectableProportionThreshold* 0.000000 ~f[0,1]~
+  DetectionCost* 1.000000 ~f>=0~
+  DetectionDynamic* 0 ~i[0,1]~
+   DetectionSearchRadius 1.000000 ~f>0~
+  DetectionTracking* 0 ~i[0,1]~
+  DetectionUseWeighting* 0 ~i[0,1]~
+   DetectionSurveyNWeightings* 1 ~i>0~
+   DetectionSurveySize 1 ~i>0~
+  DetectionUseNewSurvey* 0 ~i[0,1]~
+   DetectionMaxPopSize 1 ~i>0~
+   DetectionSampleSize* 1 ~i>0~
+   DetectionSampleProportion* 1.000000 ~f[0,1]~
+  DetectionOutputFinalState* 0 ~i[0,1]~
+
+
+=ControlCull= ~POLICY~
+ ControlCullEnable* 0 ~i[0,1]~
+  ControlCullFrequency 1.000000 ~f>0~
+  ControlCullFirst 2.000000 ~f~
+  ControlCullLast* 1002.000000 ~f~
+  ControlCullControlMethodSpecification* BLANKET ~s{BLANKET,RASTER}~
+   ControlCullControlMethodBlanketName* CULL ~s{NONE,CULL,ROGUE,AS_SPRAY,PR_SPRAY,BOTH_SPRAY}~
+   ControlCullControlMethodRasterName* L_ControlMethodRaster.txt ~s#FileName#~
+  ControlCullControlIntensitySpecification* BLANKET ~s{BLANKET,RASTER}~
+   ControlCullRadius* 1.000000 ~f>=-1~
+   ControlCullRadiusRasterName* L_ControlRadiusRaster.txt ~s#FileName#~
+  ControlCullEffectiveness* 1.000000 ~f[0,1]~
+  ControlCullForget* 0 ~i[0,1]~
+  ControlCullSprayPRDecays* 0 ~i>=0~
+   ControlCullSprayPRDecayFactor* 0.000000 ~f[0,1)~
+   ControlCullSprayPRDecayPeriod* 1.000000 ~f>0.0~
+   ControlCullSprayPRMinEffectiveness* 0.010000 ~f>=0.0~
+  ControlCullSprayASDecays* 0 ~i>=0~
+   ControlCullSprayASDecayFactor* 0.000000 ~f[0,1)~
+   ControlCullSprayASDecayPeriod* 1.000000 ~f>0.0~
+   ControlCullSprayASMinEffectiveness* 0.010000 ~f>=0.0~
+  ControlCullPriorityBasedControl* 0 ~i[0,1]~
+  ControlCullTotalBudgetPerSweep* 1.000000 ~f>0~
+  ControlCullCostPerVisit* 0.000000 ~f>=0~
+  ControlCullCostPerUnitHost* 1.000000 ~f>=0~
+   ControlCullPrioritySystem* Random ~s{Random, Raster}~
+    ControlCullPriorityRasterName* L_ControlPriorityRaster.txt ~s#FileName#~
+  ControlCullScriptedControlEnable* 0 ~i[0,1]~
+   ControlCullScriptedControlFileName* ScriptedControls.json ~s#FileName#~
+
+
+=ControlRogue= ~POLICY~
+ RogueEnable* 0 ~i[0,1]~
+  RogueFrequency 1.000000 ~f>0~
+  RogueFirst 2.000000 ~f~
+  RogueRadius 0.000000 ~f>-1~
+  RogueEffectiveness* 1.000000 ~f[0,1]~
+  RogueCost* 1.000000 ~f>=0~
+
+
+=ControlSprayAntisporulant= ~POLICY~
+ SprayASEnable* 0 ~i[0,1]~
+  SprayASFrequency 1.000000 ~f>0~
+  SprayASFirst 2.000000 ~f>=0~
+  SprayASRadius 0.000000 ~f>-1~
+  SprayASEffect 1.000000 ~f[0,1]~
+  SprayASCost* 1.000000 ~f>=0~
+  SprayASOutputFinalState* 0 ~i[0,1]~
+
+
+=ControlSprayProtectant= ~POLICY~
+ SprayPREnable* 0 ~i[0,1]~
+  SprayPRFrequency 1.000000 ~f>0~
+  SprayPRFirst 2.000000 ~f>=0~
+  SprayPRRadius 0.000000 ~f>-1~
+  SprayPREffect 1.000000 ~f[0,1]~
+  SprayPRCost* 1.000000 ~f>=0~
+  SprayPROutputFinalState* 0 ~i[0,1]~
+
+
+=Management= ~POLICY~
+ ManagementEnable* 0 ~i[0,1]~
+  ManagementDetectionProbability* 1.000000 ~f[0.0, 1.0]~
+  ManagementLogSurveyDataTable* 1 ~i[0, 1]~
+  ManagementSurveillanceTimesAndFiles {"1.0" : "myTargetSurveillanceRasterName.txt"} ~s~#JSON{f:#FileName#}#~~
+
+
+=Climate= ~MODEL~
+ ClimateEnable* 0 ~i[0,1]~
+  ClimateNSchemes* 1 ~i>0~
+  ~#ClimateScripts#~
+
+// Example of climate script usage:
+//  For each scheme, indexed by INDEX from 0 to (ClimateNSchemes-1), supply 
+//  ClimateScheme_INDEX_Mode MODE
+//   and associated keys
+//  Where availables MODE is from:
+
+//  ClimateScheme_~i[0,#ClimateNSchemes#)~_Mode Script ~s{Script, Markov, Periodic}~
+// Climate - Script
+// ClimateScheme_INDEX_Mode S
+   ClimateScheme_0_RateConstant Rate_0_Sporulation ~s{#RateConstants#}~
+   ClimateScheme_0_Scripts* 1 ~i>0~
+   ClimateScheme_0_RandomSelection* 0 ~i[0,1]~
+// Climate - Markov
+// ClimateScheme_INDEX_Mode M
+   ClimateScheme_0_RateConstant Rate_0_Sporulation ~s{#RateConstants#}~
+   ClimateScheme_0_Frequency 1.000000 ~f>0~
+   ClimateScheme_0_First 1.000000 ~f>0~
+   ClimateScheme_0_Stay0 0.000000 ~f[0,1]~
+   ClimateScheme_0_Stay1 0.000000 ~f[0,1]~
+   ClimateScheme_0_Factor 1.000000 ~f[0,1]~
+// Climate - Periodic
+// ClimateScheme_INDEX_Mode P
+   ClimateScheme_0_RateConstant Rate_0_Sporulation ~s{#RateConstants#}~
+   ClimateScheme_0_First 1.000000 ~f~
+   ClimateScheme_0_Period 1.000000 ~f>0~
+   ClimateScheme_0_OnDuration 1.000000 ~f>0~
+   ClimateScheme_0_OffFactor* 1.000000 ~f>0~
+   ClimateScheme_0_OnFactor* 1.000000 ~f>0~
+
+
+=Weather= ~APPLICATION~
+ WeatherEnable* 0 ~i[0,1]~
+  WeatherFileName* P_WeatherSwitchTimes.txt ~s#FileName#~
+  WeatherFixFileColumnSelection* 0 ~i[0,1]~
+
+
+=Hurricane= ~APPLICATION~
+ HurricaneEnable* 0 ~i[0,1]~
+  HurricaneFrequency 1.000000 ~f>0~
+  HurricaneFirst 2.000000 ~f>=0~
+  HurricaneSeverity 1.000000 ~f>0~
+
+
+=RandomInitialInfection= ~SIMULATION~
+ RandomStartLocationEnable* 0 ~i[0,1]~
+  RandomStartLocationNumber* 1 ~i>0~
+  RandomStartLocationWeightHostPresence* 0 ~i[0,1]~
+  RandomStartLocationWeightHostDensity* 1 ~i[0,1]~
+  RandomStartLocationWeightHostDensity_x_Susceptibility* 0 ~i[0,1]~
+  RandomStartLocationWeightRaster* 0 ~i[0,1]~
+   RandomStartLocationWeightRasterFileName* L_STARTWEIGHTING.txt ~s#FileName#~
+
+
+=VariableBackgroundInfection= ~APPLICATION~
+ VariableBackgroundInfectionEnable* 0 ~i[0,1]~
+  VariableBackgroundInfectionKernelZoomLevel* 1.000000 ~f>0~
+
+
+=CohortTransition= ~MODEL~
+ CohortTransitionEnable* 0 ~i[0,1]~
+  CohortTransitionNSchemes* 1 ~i>0~
+  ~#CohortTransitionScripts#~
+
+// Example of CohortTransition script usage:
+//  For each scheme, indexed by INDEX from 0 to (CohortTransitionNSchemes-1), supply 
+//  CohortTransitionScheme_INDEX_Mode MODE
+//   and associated keys
+//  Where availables MODE is from:
+
+//  CohortTransitionScheme_~i[0,#CohortTransitionNSchemes#)~_Mode Script ~s{Script, Periodic}~
+// CohortTransition - Script
+// CohortTransitionScheme_INDEX_Mode S
+   CohortTransitionScheme_0_RateConstant Rate_0_Sporulation ~s{#RateConstants#}~
+   CohortTransitionScheme_0_Scripts* 1 ~i>0~
+   CohortTransitionScheme_0_RandomSelection* 0 ~i[0,1]~
+// CohortTransition - Periodic
+// CohortTransitionScheme_INDEX_Mode P
+   CohortTransitionScheme_0_RateConstant Rate_0_Sporulation ~s{#RateConstants#}~
+   CohortTransitionScheme_0_First 1.000000 ~f>=0~
+   CohortTransitionScheme_0_Period 1.000000 ~f>0~
+
+
+=ScriptedInfectionData= ~APPLICATION~
+ ScriptedInfectionDataEnable* 0 ~i[0,1]~
+  ScriptedInfectionDataNSnapshots 1 ~i>0~
+//This then reads in a bunch of files that look like "P_ScriptedInfectionDataSnapshot_INDEX.txt".
+
+
+=ParameterDistribution= ~MODEL~
+ ParameterDistributionEnable* 0 ~i[0,1]~
+  ~#ParameterDistribution#~
+  ParameterDistribution_0_Mode Uniform ~s{Uniform, Posterior}~
+//Only should control one of the below:
+  ParameterDistribution_0_RateConstant* Rate_0_Sporulation ~s{#RateConstants#}~
+  ParameterDistribution_0_ControlKernel* 0 ~i[0,#nKernels#)~
+  ParameterDistribution_0_RateConstantMin 0.100000 ~f>0~
+  ParameterDistribution_0_RateConstantMax 1.000000 ~f>0~
+  ParameterDistribution_0_SampleLogSpace* 0 ~i[0,1]~
+  ParameterDistribution_0_PosteriorFileName* P_PosteriorDistribution_0.txt ~s#FileName#~
+
+
+=R0Map= ~ENSEMBLE~
+ R0MapEnable* 0 ~i[0,1]~
+  R0MapOutputFrequency* 1.000000 ~f>0~
+  R0MapRuns* 1 ~i>0~
+//A value of -1 means to start in a random subpopulation weighted by the host density of each population within the cell
+  R0MapStartingPopulation* -1 ~i[-1,#nPopulations#)~
+  R0MapGiveVariance* 1 ~i[0,1]~
+  R0MapGiveMeanSquare* 0 ~i[0,1]~
+  R0MapFixedStart* 0 ~i[0,1]~
+   R0MapX 0 ~i[0,#nCols#)~
+   R0MapY 0 ~i[0,#nRows#)~
+  R0MapUniformBackgroundInoculation* 0 ~i[0,1]~
+   R0MapUniformBackgroundRate 1.000000 ~f>0~
+//Windows run over cells in a range from inclusive of the min value and inclusive of the max value
+//e.g. Xmin = 0 Xmax = 1 would specify a column two cells wide containing only columns 0 and 1
+  R0MapWindowXmin* 0 ~i[0,#nCols#)~
+  R0MapWindowXmax* 0 ~i[1,#nCols#]~
+  R0MapWindowYmin* 0 ~i[0,#nRows#)~
+  R0MapWindowYmax* 0 ~i[1,#nRows#]~
+
+
+=RiskMap= ~ENSEMBLE~
+ RiskMapEnable* 0 ~i[0,1]~
+  RiskMapOutputFrequency* 1.000000 ~f>0~
+  RiskMapRuns 1 ~i>0~
+  RiskMapMaxDurationSeconds* 0 ~i>=0~
+  RiskMapGiveVariance* 0 ~i[0,1]~
+  RiskMapGiveMeanSquare* 0 ~i[0,1]~
+  RiskMapDisableTrackProbabilityInfection* 0 ~i[0,1]~
+  RiskMapDisableTrackProbabilitySymptomatic* 0 ~i[0,1]~
+  RiskMapDisableTrackSeverity* 0 ~i[0,1]~
+  RiskMapDisableTrackTimeFirstInfection* 0 ~i[0,1]~
+  RiskMapDisableTrackInoculumDeposition* 0 ~i[0,1]~
+  RiskMapDisableTrackInoculumExport* 0 ~i[0,1]~
+  RiskMapAllowStandardOutput* 1 ~i[0,1]~
+
+
+=Batch= ~ENSEMBLE~
+ BatchEnable* 0 ~i[0,1]~
+  BatchRuns 1 ~i>0~
+  BatchMaxDurationSeconds* 0 ~i>=0~

@@ -1,0 +1,17 @@
+SimulationStartTime SimulationLength BatchEnable BatchRuns Kernel_0_VirtualSporulationTransitionByRange Kernel_0_Type
+2004 7 0 1 1 PowerLaw
+2004 7 0 1 2 PowerLaw
+2004 7 0 1 3 PowerLaw
+2004 7 0 1 4 PowerLaw
+2004 7 0 1 5 PowerLaw
+2004 7 0 1 6 PowerLaw
+2004 7 0 1 7 PowerLaw
+2004 7 0 1 8 PowerLaw
+2004 7 0 1 9 PowerLaw
+2004 7 0 1 10 PowerLaw
+2004 7 0 1 11 PowerLaw
+2004 7 0 1 12 PowerLaw
+2004 7 0 1 13 PowerLaw
+2004 7 0 1 14 PowerLaw
+2004 7 0 1 15 PowerLaw
+

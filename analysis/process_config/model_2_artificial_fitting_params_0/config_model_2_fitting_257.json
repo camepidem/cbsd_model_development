@@ -1,0 +1,14 @@
+{
+ "aggregateResults": false,
+ "extractStats": false,
+ "dropIncomplete": false,
+ "appendTargetData": true,
+ "genGridRejection": true,
+ "genGridYearly": true,
+ "genMinimalDfs": true,
+ "model":"model_2",
+ "datasetSurveyLocs":"survey_data_C",
+ "datasetTargetInf":"params_0_job9_artificial_survey",
+ "batch":"2019_03_28_batch_0",
+ "simType":"fitting"
+}

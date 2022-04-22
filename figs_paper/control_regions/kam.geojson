@@ -1,0 +1,10 @@
+{
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [32.5825, 0.3476]
+    },
+    "properties": {
+      "name": "Kampala"
+    }
+  }

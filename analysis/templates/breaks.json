@@ -1,0 +1,17 @@
+{
+    "Kernel_0_Parameter": {
+        "breaksFrom": 0,
+        "breaksTo": 6,
+        "breaksBy": 0.02
+    },
+    "Kernel_0_WithinCellProportion": {
+        "breaksFrom": 0,
+        "breaksTo": 1,
+        "breaksBy": 0.02
+    },
+    "Rate_0_Sporulation_log": {
+        "breaksFrom": 0,
+        "breaksTo": 8,
+        "breaksBy": 0.1
+    }
+}

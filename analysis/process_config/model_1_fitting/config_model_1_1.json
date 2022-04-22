@@ -1,0 +1,14 @@
+{
+    "aggregateResults": false,
+    "extractStats": true,
+    "dropIncomplete": true,
+    "appendTargetData": true,
+    "genGridRejection": true,
+    "genGridYearly": true,
+    "genMinimalDfs": true,
+    "model":"model_1",
+    "datasetSurveyLocs":"survey_data_C",
+    "datasetTargetInf":"survey_data_C",
+    "batch":"2020_08_31_batch_0",
+    "simType":"fitting"
+}

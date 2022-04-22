@@ -1,0 +1,15 @@
+"fit","surveyDataYear","mask","tol"
+"mask_0",2004,"mask_uga_hole",0.3
+"mask_0",2005,"mask_uga_hole",0.3
+"mask_0",2006,"mask_uga_hole",0.3
+"mask_0",2007,"mask_uga_hole",0.3
+"mask_0",2008,"mask_uga_hole",0.3
+"mask_0",2009,"mask_uga_hole",0.3
+"mask_0",2010,"mask_uga_hole",0.3
+"mask_0",2004,"mask_uga_kam",0.3
+"mask_0",2005,"mask_uga_kam",0.3
+"mask_0",2006,"mask_uga_kam",0.3
+"mask_0",2007,"mask_uga_kam",0.3
+"mask_0",2008,"mask_uga_kam",0.3
+"mask_0",2009,"mask_uga_kam",0.3
+"mask_0",2010,"mask_uga_kam",0.3

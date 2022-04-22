@@ -1,0 +1,11 @@
+gadm36_*_0_sp.rds
+*.drawio.bkp
+.DS_Store
+*.out
+*.err
+.Rhistory
+.vscode/
+Rplots.pdf
+summary_stats/mask_polys
+figs_paper/host/GLWD-level1/raw_data
+figs_paper/host/GLWD-level1/lakes_glwd_1.gpkg

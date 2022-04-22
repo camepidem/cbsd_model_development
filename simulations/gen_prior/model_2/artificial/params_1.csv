@@ -1,0 +1,5 @@
+param_set,param_name,param_val
+1,Kernel_0_Parameter,3
+1,Rate_0_Sporulation_raw,121.51
+1,Rate_0_Sporulation,4.8
+1,Kernel_0_WithinCellProportion,0.2

@@ -1,0 +1,23 @@
+simKey,polySuffix,surveyDataYear,infProp,exact_match_bool,tol_applied_only_where_both_bool,tol_applied_all_except_final_bool,tol_applied_all_bool,description,possible
+sim_0_exact_match,grid_early_both,2008,1,TRUE,TRUE,TRUE,TRUE,exact match,
+sim_1_off_by_one,grid_early_both,2007,1,FALSE,TRUE,TRUE,TRUE,off by 1,
+sim_2_off_by_two,grid_early_both,2010,1,FALSE,FALSE,FALSE,FALSE,off by 2,
+sim_3_never,grid_early_both,2010,0,FALSE,FALSE,FALSE,FALSE,never,
+sim_0_exact_match,grid_early_one,2008,1,TRUE,TRUE,TRUE,TRUE,exact match,
+sim_1_off_by_one,grid_early_one,2007,1,FALSE,FALSE,TRUE,TRUE,off by 1 (in reality this would only work for one side),
+sim_2_off_by_two,grid_early_one,2010,1,FALSE,FALSE,FALSE,FALSE,off by 2,
+sim_3_never,grid_early_one,2010,0,FALSE,FALSE,FALSE,FALSE,never,
+sim_0_exact_match,grid_early_none,2008,1,TRUE,TRUE,TRUE,TRUE,exact match,
+sim_1_off_by_one,grid_early_none,2007,1,FALSE,FALSE,FALSE,FALSE,off by 1,IMPOSSIBLE
+sim_2_off_by_two,grid_early_none,2010,1,FALSE,FALSE,FALSE,FALSE,off by 2,
+sim_3_never,grid_early_none,2010,0,FALSE,FALSE,FALSE,FALSE,never,
+sim_0_exact_match,grid_final_one,2010,1,TRUE,TRUE,TRUE,TRUE,exact match,
+sim_1_off_by_one,grid_final_one,2009,1,FALSE,FALSE,FALSE,TRUE,off by 1,
+sim_2_off_by_two,grid_final_one,2008,1,FALSE,FALSE,FALSE,FALSE,off by 2,
+sim_3_never,grid_final_one,2010,0,FALSE,FALSE,FALSE,FALSE,never,
+sim_0_exact_match,grid_final_none,2010,1,TRUE,TRUE,TRUE,TRUE,exact match,
+sim_1_off_by_one,grid_final_none,2009,1,FALSE,FALSE,FALSE,FALSE,off by 1,IMPOSSIBLE
+sim_2_off_by_two,grid_final_none,2008,1,FALSE,FALSE,FALSE,FALSE,off by 2,
+sim_3_never,grid_final_none,2010,0,FALSE,FALSE,FALSE,FALSE,never,
+sim_0_exact_match,grid_never,2010,0,TRUE,TRUE,TRUE,TRUE,never,
+sim_4_only_sim_inf,grid_never,2007,1,FALSE,FALSE,FALSE,FALSE,any_inf,

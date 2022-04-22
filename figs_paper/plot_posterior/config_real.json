@@ -1,0 +1,46 @@
+{
+    "prelim_model_0": {
+        "bigDfPath": "../../analysis/results_fitting/sim_output_agg/model_0/2022_01_20_merged/survey_data_C/survey_data_C/results_summary_fixed_TARGET_MINIMAL.rds",
+        "passKeysDfPath": "../../analysis/results_fitting/fitting_output/model_0/2022_01_20_merged/survey_data_C/survey_data_C/2022_01_31_230215_2022_01_31_fitting_prelim_03/grid-tol_applied_only_where_both_bool-0.58_mask_0/passKeys.csv",
+        "plotDir": "plots_prelim_model_0",
+        "plotPrefix": "",
+        "droppedBool": false,
+        "batchBool": false,
+        "bigFont": true,
+        "passKeysDfPredroppedPath": null,
+        "paramsPath": null
+    },
+    "prelim_model_1": {
+        "bigDfPath": "../../analysis/results_fitting/sim_output_agg/model_1/2022_01_20_merged/survey_data_C/survey_data_C/results_summary_fixed_TARGET_MINIMAL.rds",
+        "passKeysDfPath": "../../analysis/results_fitting/fitting_output/model_1/2022_01_20_merged/survey_data_C/survey_data_C/2022_01_31_230228_2022_01_31_fitting_prelim_03/grid-tol_applied_only_where_both_bool-0.58_mask_0/passKeys.csv",
+        "plotDir": "plots_prelim_model_1",
+        "plotPrefix": "",
+        "droppedBool": false,
+        "batchBool": false,
+        "bigFont": true,
+        "passKeysDfPredroppedPath": null,
+        "paramsPath": null
+    },
+    "prelim_model_2": {
+        "bigDfPath": "../../analysis/results_fitting/sim_output_agg/model_2/2022_01_19_sample/survey_data_C/survey_data_C/results_summary_fixed_TARGET_MINIMAL.rds",
+        "passKeysDfPath": "../../analysis/results_fitting/fitting_output/model_2/2022_01_19_sample/survey_data_C/survey_data_C/2022_01_31_230237_2022_01_31_fitting_prelim_03/grid-tol_applied_only_where_both_bool-0.58_mask_0/passKeys.csv",
+        "plotDir": "plots_prelim_model_2",
+        "plotPrefix": "",
+        "droppedBool": false,
+        "batchBool": false,
+        "bigFont": true,
+        "passKeysDfPredroppedPath": null,
+        "paramsPath": null
+    },
+    "model_2": {
+        "bigDfPath": "../../analysis/results_fitting/sim_output_agg/model_2/2021_12_01_merged/survey_data_C/survey_data_C/results_summary_fixed_TARGET_MINIMAL.rds",
+        "passKeysDfPath": "../../analysis/results_fitting/fitting_output/model_2/2021_12_01_merged/survey_data_C/survey_data_C/2022_02_03_175717_2022_02_03_single/grid-tol_applied_only_where_both_bool-0.48_mask_6_DROP/passKeys.csv",
+        "plotDir": "plots_model_2",
+        "plotPrefix": "",
+        "droppedBool": true,
+        "batchBool": false,
+        "bigFont": true,
+        "passKeysDfPredroppedPath": "../../analysis/results_fitting/fitting_output/model_2/2021_12_01_merged/survey_data_C/survey_data_C/2022_02_03_175717_2022_02_03_single/grid-tol_applied_only_where_both_bool-0.48_mask_6/passKeys.csv",
+        "paramsPath": null
+    }
+}

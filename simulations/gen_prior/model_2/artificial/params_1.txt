@@ -1,0 +1,5 @@
+nParameters 3
+nEntries 1
+Parameter_1_SampleLogSpace 1
+Density Kernel_0_Parameter Rate_0_Sporulation Kernel_0_WithinCellProportion
+1 3 3 121.51 121.51 0.2 0.2

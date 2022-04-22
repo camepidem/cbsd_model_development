@@ -1,0 +1,14 @@
+{
+    "aggregateResults": true,
+    "extractStats": false,
+    "dropIncomplete": false,
+    "appendTargetData": false,
+    "genGridRejection": false,
+    "genGridYearly": false,
+    "genMinimalDfs": false,
+    "model":"model_2",
+    "datasetSurveyLocs":"survey_data_C",
+    "datasetTargetInf":"survey_data_C",
+    "batch":"2022_01_31_prelim_validation_025",
+    "simType":"validation"
+}

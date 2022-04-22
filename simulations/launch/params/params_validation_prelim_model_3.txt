@@ -1,0 +1,10 @@
+SimulationStartTime SimulationLength ManagementDetectionProbability WeatherEnable Kernel_0_VirtualSporulationTransitionByRange Kernel_0_Type ControlCullEffectiveness
+2004 14 0.85 1 6 PowerLaw 0.0
+2004 14 0.85 1 6 PowerLaw 0.05
+2004 14 0.85 1 6 PowerLaw 0.1
+2004 14 0.85 1 6 PowerLaw 0.15
+2004 14 0.85 1 6 PowerLaw 0.2
+2004 14 0.85 1 6 PowerLaw 0.25
+2004 14 0.85 1 6 PowerLaw 0.3
+2004 14 0.85 1 6 PowerLaw 0.35
+2004 14 0.85 1 6 PowerLaw 0.4

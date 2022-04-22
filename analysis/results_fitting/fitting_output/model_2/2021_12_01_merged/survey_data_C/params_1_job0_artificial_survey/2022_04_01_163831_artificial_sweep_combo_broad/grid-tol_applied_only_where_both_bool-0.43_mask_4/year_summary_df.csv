@@ -1,0 +1,8 @@
+"surveyDataYear","numPass","numPassGrid","maskKey","masks","gridKey"
+2004,229851,163399,"mask_4","2004_mask_uga_hole_0.15|2004_mask_uga_kam_0.15","grid-tol_applied_only_where_both_bool-0.43"
+2005,214011,161017,"mask_4","2005_mask_uga_hole_0.15|2005_mask_uga_kam_0.15","grid-tol_applied_only_where_both_bool-0.43"
+2006,156478,141930,"mask_4","2006_mask_uga_hole_0.15|2006_mask_uga_kam_0.15","grid-tol_applied_only_where_both_bool-0.43"
+2007,105122,102857,"mask_4","2007_mask_uga_hole_0.15|2007_mask_uga_kam_0.15","grid-tol_applied_only_where_both_bool-0.43"
+2008,95652,94265,"mask_4","2008_mask_uga_hole_0.15|2008_mask_uga_kam_0.15","grid-tol_applied_only_where_both_bool-0.43"
+2009,30859,30598,"mask_4","2009_mask_uga_hole_0.15|2009_mask_uga_kam_0.15","grid-tol_applied_only_where_both_bool-0.43"
+2010,26743,26553,"mask_4","2010_mask_uga_hole_0.15|2010_mask_uga_kam_0.15","grid-tol_applied_only_where_both_bool-0.43"

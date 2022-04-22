@@ -1,0 +1,2 @@
+SimulationStartTime SimulationLength ManagementDetectionProbability WeatherEnable Kernel_0_VirtualSporulationTransitionByRange Kernel_0_Type
+2004 14 0.85 1 6 PowerLaw

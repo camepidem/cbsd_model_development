@@ -1,0 +1,3 @@
+results_fitting/sim_output_agg/model_0B//2021_03_09_batch_0
+results_fitting/sim_output_agg/model_0B//2021_03_11_batch_0
+results_fitting/sim_output_agg/model_0B//2021_03_12_batch_0
