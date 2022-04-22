@@ -7,5 +7,8 @@ gadm36_*_0_sp.rds
 .vscode/
 Rplots.pdf
 summary_stats/mask_polys
+input_generation/surveillance_data/raw_data/uga_paper_DATASET_C.csv
+input_generation/host_landscape/raw_host/CassavaMap_Prod_v1.tif
+input_generation/control_raster/inputs/uga_admbnda_ubos_20200824.gdb
 figs_paper/host/GLWD-level1/raw_data
 figs_paper/host/GLWD-level1/lakes_glwd_1.gpkg

@@ -6,7 +6,6 @@ library(rgeos)
 library(raster)
 projStr = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0"
 
-inputsDir = "poly_inputs"
 outDir = "mask_polys"
 dir.create(outDir, showWarnings = F)
 
