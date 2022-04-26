@@ -10,7 +10,7 @@ ugaDf = read.csv(ugaDfPath) |> dplyr::mutate(mask="Uga")
 
 statsDf = rbind(kamDf, ugaDf)
 
-lab1 = c("Kam" = expression(S[kam]), "Uga" = expression(S[nat]))
+lab1 = c("Kam" = expression(S[cen]), "Uga" = expression(S[nat]))
 
 p = ggplot(statsDf, aes(x=year, y=propPos, col=mask)) + 
     geom_line() +

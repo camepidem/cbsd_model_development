@@ -38,7 +38,7 @@ p =
         legend.text.size = 1.2
     ) +
     
-    tm_credits(expression(S[kam]), position=c(0.5,0.33), size = 2) +
+    tm_credits(expression(S[cen]), position=c(0.5,0.33), size = 2) +
     tm_credits(expression(S[nat]), position=c(0.5,0.65), size = 2)
 
 # p
