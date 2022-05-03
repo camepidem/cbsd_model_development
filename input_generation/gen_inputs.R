@@ -1,15 +1,14 @@
 options(stringsAsFactors = F)
 
 # Core functions
-genHost = 0
-genSurvey = 1
-genVector = 0
-fixHost = 0
-genInitial = 0
+genHost = TRUE
+genSurvey = TRUE
+genVector = TRUE
+fixHost = TRUE
+genInitial = TRUE
 
 # Diagnostics
-genSurveyPlots = 0
-checkLocations = 1
+genSurveyPlots = TRUE
 
 # Constants
 singleFieldVal = 1/1000
@@ -139,22 +138,6 @@ if(genSurveyPlots){
   plotSurveyData(
     surveyDataC=surveyDataC, 
     plotDirC=plotDirC
-  )
-
-}
-
-if(checkLocations){
-
-  source("surveillance_data/check_locations.R")
-
-  surveyDataPath = surveyDataCOutPath
-  lakesPolyDir = "surveillance_data/lakes_polys"
-  checkPlotDir = "surveillance_data/plots/check_plots"
-
-  checkLocationsFun(
-    surveyDataPath=surveyDataPath, 
-    lakesPolyDir=lakesPolyDir, 
-    plotDir=checkPlotDir
   )
 
 }

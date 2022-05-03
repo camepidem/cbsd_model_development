@@ -1,5 +1,5 @@
-doRealData = 0
-doArtificialData = 1
+doRealData = TRUE
+doArtificialData = FALSE
 
 surveyDataList = list()
 
