@@ -34,11 +34,21 @@ Conda env: `./env_python.yml`
 
 Models 0-2 follow the naming convention in the supplementary material of the paper. Model 0B represents preliminary attempts to parameterise a model with an exponential kernel. Model 3 represents the final validated model in the paper and is composed of the parameterised model_2 with the clean seed management intervention during 2013-2015. 
 
-## Downloading input data
+## Downloading datasets
 
-Run this first to download datasets that were under a 'no redistribution licence':
+Run this first to download datasets:
 
 `bash ./download_data.sh`
+
+Alicai, T., Szyniszewska, A.M., Omongo, C.A. et al. Expansion of the cassava brown streak pandemic in Uganda revealed by annual field survey data for 2004 to 2017. Sci Data 6, 327 (2019). https://doi.org/10.1038/s41597-019-0334-9
+
+Szyniszewska, A.M. CassavaMap, a fine-resolution disaggregation of cassava production and harvested area in Africa in 2014. Sci Data 7, 159 (2020). https://doi.org/10.1038/s41597-020-0501-z
+
+Ugandan Subnational Administrative Boundaries:
+- https://data.humdata.org/dataset/cod-ab-uga
+- https://creativecommons.org/licenses/by/3.0/igo/legalcode
+
+Lehner, B. and Döll, P. (2004): Development and validation of a global database of lakes, reservoirs and wetlands. Journal of Hydrology 296/1-4: 1-22.
 
 ## Generating simulation and parameter estimation input files
 
