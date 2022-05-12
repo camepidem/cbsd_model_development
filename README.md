@@ -8,7 +8,7 @@ This repo contains the analysis code for the iterative development, parameter es
 - The ABC fitting code that acts upon these datasets
 - The plotting code to generate the results presented in the paper
 
-The code for the MPEM simulator can be found here: `TODO: INSERT RICH'S REPO URL`
+The code for the MPEM simulator can be found here: https://github.com/camepidem/MPEM
 
 It is important to note that fitting/validation simulations were generally run in batches of a few thousand simulations that were subsequently merged and then analysed. Therefore, this iterative generation of simulations, analysis and merging is integral to the code workflow.
 
